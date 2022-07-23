@@ -1,4 +1,4 @@
-package com.miniproject.model;
+package com.miniproject.blog.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

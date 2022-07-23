@@ -1,7 +1,7 @@
-package com.miniproject.model;
+package com.miniproject.blog.model;
 
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -37,21 +37,14 @@ public class User {
     @Column(name = "CREATED_AT", updatable = false)
     private LocalDateTime createdAt;
 
+//    @CreationTimestamp  //이렇게 바꾸면 테이블에 날짜 뜸
+//    @Column(name = "CREATED_AT", updatable = false)
+//    private Timestamp createdAt;
+
     @LastModifiedDate
     @Column(name = "LAST_MODIFIED_AT")
     private LocalDateTime modifiedAt;
 
     @Enumerated(EnumType.STRING)
-    private UserRole user_role; //추후 변경 예정 enum으로 도메인을 지정해서 오류 입력를 방지
-
-    @Getter
-    public enum UserRole {
-        ROLE_ADMIN("관리자"), ROLE_MEMBER("일반사용자");
-
-        private String description;
-        UserRole(String description) {
-            this.description = description;
-        }
-
-    }
+    private RoleType role; //enum으로 도메인을 지정해서 오류 입력를 방지
 }
