@@ -31,7 +31,7 @@ public class Post {
     @Lob  //대용량 데이터
     private String content;  //섬머노트 라이브러리 <HTML> 태그가 섞여서 디자인 됨
 
-    @ColumnDefault("0")
+
     private int count; //글 조회수
 
     //작성자 정보 매핑
