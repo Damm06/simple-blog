@@ -27,8 +27,8 @@ public class User {
     @Column(nullable = false, length = 100) //비밀번호 암호화하면 길어지니까 넉넉히 지정
     private String password;
 
-    @Column(nullable = false, length = 30)
-    private String phone;
+//    @Column(nullable = false, length = 30)
+//    private String phone;
 
     @Column(nullable = false, length = 50)
     private String email;
