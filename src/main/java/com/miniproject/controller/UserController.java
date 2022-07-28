@@ -13,8 +13,18 @@ public class UserController {
 //        return "joinForm";
 //    }
 
-    @GetMapping("/home")
-    public String index() {
-        return "index";
+//    @GetMapping("/home")
+//    public String index() {
+//        return "index";
+//    }
+
+    @GetMapping("/auth/user/save")
+    public String userSave() {
+        return "layout/user/user-save";
+    }
+
+    @GetMapping("/auth/user/login")
+    public String userLogin() {
+        return "layout/user/user-login";
     }
 }

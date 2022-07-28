@@ -21,7 +21,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, unique = true)
     private String username;
 
     @Column(nullable = false, length = 100) //비밀번호 암호화하면 길어지니까 넉넉히 지정
@@ -47,4 +47,8 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private RoleType role; //enum으로 도메인을 지정해서 오류 입력를 방지
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
