@@ -1,5 +1,6 @@
 package com.miniproject.blog.model;
 
+import com.miniproject.audit.Auditable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,11 +16,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Reply {
+public class Reply extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 200)
     private String content;
@@ -32,11 +33,11 @@ public class Reply {
     @JoinColumn(name = "userId")
     private User user;
 
-    @CreatedDate
-    @Column(name = "CREATED_AT", updatable = false)
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(name = "LAST_MODIFIED_AT")
-    private LocalDateTime modifiedAt;
+//    @CreatedDate
+//    @Column(name = "CREATED_AT", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @LastModifiedDate
+//    @Column(name = "LAST_MODIFIED_AT")
+//    private LocalDateTime modifiedAt;
 }

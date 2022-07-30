@@ -18,8 +18,8 @@ public class PostApiController {
 
     //스프링 시큐리티로 로그인 먼저 구현해야 할 듯
     @PostMapping("/api/post")
-    public ResponseDto<Integer> save(@RequestBody Post post) {
+    public ResponseDto<Long> save(@RequestBody Post post) {
         System.out.println("UserApiController: save 호출됨");
-        return new ResponseDto<Integer>(HttpStatus.OK,1);
+        return new ResponseDto<Long>(HttpStatus.OK,1L);
     }
 }

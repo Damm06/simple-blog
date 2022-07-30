@@ -60,7 +60,7 @@ public class UserApiControllerTest {
         String url = "http://localhost:" + port + "/auth/api/v1/user";
 
         //when
-        ResponseEntity<Integer> responseEntity = restTemplate.postForEntity(url, userSaveRequestDto, Integer.class);
+        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, userSaveRequestDto, Long.class);
 
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);

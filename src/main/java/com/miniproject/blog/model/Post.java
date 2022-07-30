@@ -1,5 +1,6 @@
 package com.miniproject.blog.model;
 
+import com.miniproject.audit.Auditable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,11 +19,11 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity //DB 매핑을 알려주는 어노테이션은 제일 아래에(가까이) 있는 게 좋음
-public class Post {
+public class Post extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int postId;
+    private Long postId;
 
     @Column(nullable = false, length = 100)
     private String title;
@@ -42,11 +43,11 @@ public class Post {
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER) //연관관계의 주인이 reply가 아니라는 뜻. FK가 아니니까 DB 칼럼 만들지 말란 의미.
     private List<Reply> replyList;
 
-    @CreatedDate
-    @Column(name = "CREATED_AT", updatable = false)
-    private LocalDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(name = "LAST_MODIFIED_AT")
-    private LocalDateTime modifiedAt;
+//    @CreatedDate
+//    @Column(name = "CREATED_AT", updatable = false)
+//    private LocalDateTime createdAt;
+//
+//    @LastModifiedDate
+//    @Column(name = "LAST_MODIFIED_AT")
+//    private LocalDateTime modifiedAt;
 }
