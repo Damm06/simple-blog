@@ -1,6 +1,7 @@
 package com.miniproject.blog.config.auth;
 
 import com.miniproject.blog.model.User;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @RequiredArgsConstructor
+@Getter
 public class PrincipalDetail implements UserDetails {
 
     private final User user;
@@ -60,5 +62,10 @@ public class PrincipalDetail implements UserDetails {
     }
 
     public void setUser(User userEntity) {
+    }
+
+
+    public User getUser() {
+        return new User();
     }
 }

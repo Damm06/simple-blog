@@ -43,6 +43,12 @@ public class Post extends Auditable {
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER) //연관관계의 주인이 reply가 아니라는 뜻. FK가 아니니까 DB 칼럼 만들지 말란 의미.
     private List<Reply> replyList;
 
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+
 //    @CreatedDate
 //    @Column(name = "CREATED_AT", updatable = false)
 //    private LocalDateTime createdAt;
