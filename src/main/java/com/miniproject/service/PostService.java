@@ -16,7 +16,6 @@ import java.util.List;
 @Service
 public class PostService {
 
-//    @Autowired
     private final PostRepository postRepository;
 
     @Transactional
