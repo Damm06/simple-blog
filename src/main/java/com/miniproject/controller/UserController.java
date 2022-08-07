@@ -12,10 +12,10 @@ public class UserController {
     //그냥 주소가 / 이면 index.html 허용
     //static 이하에 있는 리소스 파일들 (js,css,images 등) 것들도 허용
 
-//    @GetMapping("/auth/joinForm")
-//    public String joinForm() {
-//        return "joinForm";
-//    }
+    @GetMapping("/auth/joinForm")
+    public String joinForm() {
+        return "joinForm";
+    }
 
 //    @GetMapping("/home")
 //    public String index() {
